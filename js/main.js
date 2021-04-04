@@ -62,11 +62,32 @@ console.log(counter());
  */
 
 
- function counting() {
-     var count = 0;
-     return 
- }
-
+ var counting = (function() {
+     var a = 0;
+     return {
+         value(num) {
+         a = num !== undefined ? num : a;
+         return a;
+         },
+         increment() {
+             return a++;
+         },
+         decrement() {
+             return a--;
+         }
+        }
+     }());
+ 
+console.log(counting.value());
+// console.log(counting.value(3));
+counting.increment();
+counting.increment();
+console.log(counting.value());
+counting.decrement();
+console.log(counting.value());
+console.log(counting.value(6));
+counting.decrement();
+console.log(counting.value());
 // console.log(counting.value()); // 0
 
 // counting.increment();
@@ -106,6 +127,12 @@ console.log(counter());
  * console.log(myPow(3, 4, myPrint)); // 3^4=81
  * console.log(myPow(2, 3, myPrint)); // 2^3=8
  */
+
+function myPow(a,b,myPrint) {
+return 
+}
+
+
 
 //  console.log(myPow(3, 4, myPrint)); // 3^4=81
 
